@@ -68,14 +68,13 @@ const Login = () => {
       <section>
         <div className="form_data">
           <div className="form_heading">
-            <h1>Welcome Back, Log In</h1>
-            <p>Hi, we are you glad you are back. Please login.</p>
+            <h1>Log In</h1>
           </div>
 
           <form>
             <div className="form_input">
               <label htmlFor="email">Email</label>
-              <input type="email" value={inpval.email} onChange={setVal} name='email' id='email' placeholder='Enter Your Email Address' />
+              <input type="email" autoComplete='off' value={inpval.email} onChange={setVal} name='email' id='email' placeholder='Enter Your Email Address' />
             </div>
             <div className="form_input">
               <label htmlFor="password">Password</label>
@@ -88,6 +87,7 @@ const Login = () => {
             </div>
             <button className='btn' onClick={loginuser}>Login</button>
             <p>Don't have an Account? <NavLink to="/register">Sign Up</NavLink> </p>
+            <p style={{color:"black",fontWeight:"bold"}}>Forgot Password  <NavLink to="/password-reset">Click Here</NavLink> </p>
           </form>
         </div>
       </section>

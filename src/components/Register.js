@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { NavLink, useNavigate } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import "./mix.css"
 
 const Register = () => {
 
   const [passShow, setPassShow] = useState(false);
   const [cpassShow, setCPassShow] = useState(false);
-
-  const history = useNavigate();
 
   const [inpval, setInpval] = useState({
     fname: "",
@@ -52,7 +50,7 @@ const Register = () => {
     } else if (password.length < 8) {
       alert("password must be 8 chars")
     } else if (cpassword === "") {
-      alert("please enter your cpassword");
+      alert("please enter your confirm password");
     } else if (cpassword.length < 8) {
       alert("cpassword must be 8 chars")
     } else if (password !== cpassword) {
@@ -86,26 +84,24 @@ const Register = () => {
         <div className="form_data">
           <div className="form_heading">
             <h1>Sign Up</h1>
-            <p style={{ textAlign: "center" }}>We are glad that you will be using Project Cloud to manage <br />
-              your tasks! We hope that you will get like it.</p>
           </div>
 
           <form>
             <div className="form_input">
               <label htmlFor="fname">Name</label>
-              <input type="text" onChange={setVal} value={inpval.fname} name="fname" id="fname" placeholder='Enter Your Name' />
+              <input type="text" autoComplete='off' onChange={setVal} value={inpval.fname} name="fname" id="fname" placeholder='Enter Your Name' />
             </div>
             <div className="form_input">
               <label htmlFor="email">Email</label>
-              <input type="email" onChange={setVal} value={inpval.email} name='email' id='email' placeholder='Enter Your Email Address' />
+              <input type="email" autoComplete='off' onChange={setVal} value={inpval.email} name='email' id='email' placeholder='Enter Your Email Address' />
             </div>
             <div className="form_input">
               <label htmlFor="fname">Mobile</label>
-              <input type="text" onChange={setVal} value={inpval.mobile} name="mobile" id="mobile" placeholder='Enter Your Mobile' />
+              <input type="text" autoComplete='off' onChange={setVal} value={inpval.mobile} name="mobile" id="mobile" placeholder='Enter Your Mobile' />
             </div>
             <div className="form_input">
               <label htmlFor="place">Place</label>
-              <input type="text" onChange={setVal} value={inpval.place} name="place" id="place" placeholder='Enter Your Place' />
+              <input type="text" autoComplete='off' onChange={setVal} value={inpval.place} name="place" id="place" placeholder='Enter Your Place' />
             </div>
             <div className="form_input">
               <label htmlFor="password">Password</label>
